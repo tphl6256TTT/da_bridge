@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  /* Mint color palette */
+  --color-mint-50: #f0fdf9;
+  --color-mint-100: #ccfbef;
+  --color-mint-200: #99f6e0;
+  --color-mint-300: #5fe9d0;
+  --color-mint-400: #2dd4bf;
+  --color-mint-500: #14b8a6;
+  --color-mint-600: #0d9488;
+  --color-mint-700: #0f766e;
+  --color-mint-800: #115e59;
+  --color-mint-900: #134e4a;
+  
+  /* Additional theme colors */
+  --color-gold: #fbbf24;
+  --color-premium: #a855f7;
+  
+  /* Spacing for fixed padding */
+  --spacing-screen-padding: 1rem;
+}
+
+/* Force Tailwind dark mode to use class strategy, not system preferences */
+@variant dark (&:where(.dark, .dark *));
+
+/* Explicitly disable system dark mode detection */
+@media (prefers-color-scheme: dark) {
+  :root:not(.dark) {
+    color-scheme: light !important;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Typography defaults */
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+button {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Mobile container for iPhone 17 */
+.mobile-container {
+  width: 375px;
+  height: 812px;
+  max-width: 375px;
+  max-height: 812px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
